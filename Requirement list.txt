@@ -1,7 +1,0 @@
-torch
-torch-geometric
-streamlit
-numpy
-pandas
-scikit-learn
-imblearn
