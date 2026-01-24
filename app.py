@@ -48,9 +48,10 @@ rainfall = st.number_input("Rainfall (cm)", min_value=0.0, step=1.0)
 elevation = st.number_input("Elevation (meters)", min_value=0.0, step=1.0)
 land_use = st.selectbox(
     "Land Use Type",
-    options=[0, 1, 2, 3],
-    format_func=lambda x: f"Land Use {x}"
+    options=["Residential", "Commercial", "Industrial", "Agricultural"]
 )
+land_use = ["Residential", "Commercial", "Industrial", "Agricultural"].index(land_use)
+
 
 
 # -------------------- PREDICTION LOGIC --------------------
