@@ -88,6 +88,14 @@ if st.button("Predict Flood"):
 
     # Display result
     if prediction == 1:
-        st.error("⚠️ Flood Risk Detected")
+        st.error("⚠️ Flood Risk Detected!")
+        st.write("### 🚨 Precautions:")
+        st.write("""
+        - Avoid low-lying areas  
+        - Ensure proper drainage  
+        - Stay updated with local alerts  
+        - Move valuables to higher ground  
+        """)
     else:
-        st.success("✅ No Flood Risk")
+        st.success("✅ Area is Safe")
+        st.write("No immediate flood risk detected.")
