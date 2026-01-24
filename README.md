@@ -46,7 +46,7 @@ SMOTE (Synthetic Minority Over-sampling Technique) is applied only on the traini
 ## 🧠 Model Architecture
 
 ## Model Pipeline
-![refresh](arch.jpg)
+![refresh](yo.png)
 
 ## 📊 Evaluation Metrics
 - Accuracy
