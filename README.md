@@ -46,17 +46,29 @@ SMOTE (Synthetic Minority Over-sampling Technique) is applied only on the traini
 ## 🧠 Model Architecture
 
 Input Features (3)
+
       ↓
+
 GCN Layer (32)
+      
       ↓
+
 ReLU
+
       ↓
+
 GCN Layer (16)
+
       ↓
+
 ReLU
+
       ↓
+
 GCN Layer (2)
+
       ↓
+
 Flood / No Flood
 
 ---
