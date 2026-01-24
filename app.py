@@ -46,11 +46,12 @@ st.write("Enter area details to predict flood risk")
 # User inputs
 rainfall = st.number_input("Rainfall (cm)", min_value=0.0, step=1.0)
 elevation = st.number_input("Elevation (meters)", min_value=0.0, step=1.0)
+land_use_options = ["Default", "Residential", "Commercial", "Industrial", "Agricultural"]
+
 land_use = st.selectbox(
     "Land Use Type",
-    options=["Residential", "Commercial", "Industrial", "Agricultural"]
+    land_use_options
 )
-land_use = ["Residential", "Commercial", "Industrial", "Agricultural"].index(land_use)
 
 
 
@@ -58,11 +59,20 @@ land_use = ["Residential", "Commercial", "Industrial", "Agricultural"].index(lan
 
 if st.button("Predict Flood"):
 
+    # ⛔ Stop if Default is selected
+    if land_use == "Default":
+        st.warning("Please select a valid Land Use Type before predicting.")
+        st.stop()
+
+    # Convert land_use string → number
+    land_use = ["Residential", "Commercial", "Industrial", "Agricultural"].index(land_use)
+
     # Create node feature tensor
     node_features = torch.tensor(
         [[rainfall, elevation, land_use]],
         dtype=torch.float
     )
+
 
     # Single-node dummy graph (required by GNN)
     edge_index = torch.tensor([[0], [0]], dtype=torch.long)
