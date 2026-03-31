@@ -198,5 +198,5 @@ if st.session_state.bg_image == IMG_FLOOD:
         """)
 elif st.session_state.bg_image == IMG_SAFE:
     with prediction_placeholder.container():
-        st.success("✅ Area is Safe")
+        st.markdown("### ✅ Area is Safe")
         st.write("No immediate flood risk detected.")
